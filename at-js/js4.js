@@ -7,4 +7,5 @@ function division(str){
     }
   }
 }
-division('19*');
+
+
