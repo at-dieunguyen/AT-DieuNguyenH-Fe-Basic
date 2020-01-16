@@ -4,6 +4,24 @@
 p {
   width: 10%;
 }
-.cart-icon{
-  width: 50px;
+table, td, th {
+  border: 1px solid black;
+  width: 18%;
+
+}
+#cart-item{
+  width: 70%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+tr {
+  height: 70px;
+  text-align: center;
+}
+.company-name-top {
+  font-family: UTM-AvoBold;
+  width: 500px;
+}
+img{
+  width: 30%;
 }

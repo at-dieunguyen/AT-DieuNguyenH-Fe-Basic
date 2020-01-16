@@ -1,39 +1,43 @@
-// var saveQuantity;
-// if (localStorage.getItem('saveQuantity') === null) {
-//   localStorage.setItem('saveQuantity', JSON.stringify(saveQuantity));
-// } else {
-//   saveQuantity = JSON.parse(localStorage.getItem('saveQuantity'));
-//   for (var i = 0; i < getData.length; i++) {
-//     saveQuantity.push({
-//       id: getData[i].id,
-//       number: 1,
-//       total: getData[i].price * 1,
-//     })
-//   }
-// }
-var getData = JSON.parse(localStorage.getItem('add-cart'));
-for (var i = 0; i < getData.length; i++) {
-  var box = document.getElementById('bodyTable');
-  box.innerHTML +=
-    "<tr id='remove" + (i + 1) + "'>" +
-    "<td class='stt'>" + (i + 1) + "</td>" +
-    // "<td class='name-product'> <img src='./images/" + getData[i].image + "'/>" + getData[i].name + "</td>" +
-    "<td class='name-product'>" + getData[i].name + "</td>" +
-    "<td class='quantity'><input value='1' id='" + (i + 1) + "' onchange='changeFunction(" + (i + 1) + ")' class='quatity-detail' type='number' min='1'/></td>" +
-    "<td class='price'>$ <input disabled='disabled' class='input-price' id='price" + (i + 1) + "' value='" + getData[i].price + "' /></td>" +
-    "<td class='total' id='total" + (i + 1) + "'>$ " + getData[i].price + "</td>" +
-    "<td class='delete' id='delete" + (i + 1) + "' onclick='deleteItem(" + (i + 1) + ")'><i class='fa fa-times'></i></td>" +
-    "</tr>";
+var data = JSON.parse(localStorage.getItem('cart'))
+var cartItem = data ? data : [];
+var cart = cartItem;
+var showCart = function () {
+  data.forEach(getCart);
 }
-function changeFunction(id) {
-  var quantity = document.getElementById("" + id).value;
-  var price = document.getElementById("price" + id).value;
-  var total = quantity * price;
-  document.getElementById("total" + id).innerHTML = "$ " + total;
+function getCart(item, index) {
+  var product = item.products;
+  //call tr element from DOM
+  var table = document.getElementById("cart-item");
+  var row = document.createElement('tr');
+  table.appendChild(row);
+  //Create td1 img
+  var td1 = document.createElement('td');
+  var img = document.createElement('img');
+  img.src = product.img;
+  row.appendChild(td1);
+  td1.appendChild(img);
+  //create td2 name
+  var td2 = document.createElement('td');
+  td2.innerHTML = product.name;
+  row.appendChild(td2);
+  //create td3 price
+  var td3 = document.createElement('td');
+  td3.innerHTML = product.price;
+  row.appendChild(td3);
+  //create td4 quantity
+  var td4 = document.createElement('td');
+  td4.innerHTML = item.count;
+  row.appendChild(td4);
+  //create subtotal
+  var td5 = document.createElement('td');
+  td5.innerHTML = product.price * item.count;
+  row.appendChild(td5);
+  //create button remove
+  var td6 = document.createElement('td');
+  var btn_rm = document.createElement('button');
+  btn_rm.innerHTML = 'Remove';
+  btn_rm.setAttribute = ('class', 'btn-rm');
+  row.appendChild(td6);
+  td6.appendChild(btn_rm);
 }
-function deleteItem(id) {
-  var remove = document.getElementById("remove" + id);
-  remove.remove();
-  getData.splice(id - 1, 1);
-  localStorage.setItem('add-cart', JSON.stringify(getData));
-}
+window.onload = showCart();
