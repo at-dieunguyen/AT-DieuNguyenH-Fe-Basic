@@ -36,8 +36,34 @@ function getCart(item, index) {
   var td6 = document.createElement('td');
   var btn_rm = document.createElement('button');
   btn_rm.innerHTML = 'Remove';
-  btn_rm.setAttribute = ('class', 'btn-rm');
+  // btn_rm.setAttribute = ('class', 'btn-rm');
+  btn_rm.className = 'btn-rm';
+  // btn_rm.addEventListener('click', function(){
+  //   deleteItem();
+  // });
   row.appendChild(td6);
   td6.appendChild(btn_rm);
 }
 window.onload = showCart();
+
+//delete item
+function deleteItem() {
+  var deleteBtn = document.getElementsByClassName('btn-rm');
+  for (var i = 0; i < deleteBtn.length; i++) {
+    deleteBtn[i].addEventListener('click', function (event) {
+      var btnValue = event.target.dataset.id;
+      var cart = localStorage.getItem('cart');
+      cart = cart ? JSON.parse(cart) : [];
+      for (var i = 0; i < cart.length; i++) {
+        if (btnValue === cart[i]['id']) {
+          cart.splice(i, 1);
+        }
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+     // render(JSON.parse(cart));
+    //  getCart(JSON.parse(cart));
+    })
+  }
+}
+deleteItem();

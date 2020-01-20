@@ -38,15 +38,16 @@ function addCart(products) {
   var cartItem = data ? data : [];
   var cart = cartItem;
   var count = 1;
-  var index = findProductInCart(cart, products);
+  var index = findProduct(cart, products);
   if (index !== -1) {
     cart[index].count += count;
   } else {
     cart.push({ products, count });
   }
   localStorage.setItem('cart', JSON.stringify(cart));
+  numberCart();
 }
-function findProductInCart(cart, products) {
+function findProduct(cart, products) {
   var index = -1;
   if (cart.length > 0) {
     for (var i = 0; i < cart.length; i++) {

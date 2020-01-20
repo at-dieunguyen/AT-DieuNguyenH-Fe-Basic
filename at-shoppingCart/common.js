@@ -57,4 +57,15 @@ localStorage.setItem('products', JSON.stringify(products));
 //     count += cart[i].count;
 //    }
 //   countCart.innerHTML = count;
-// };
+// }
+function numberCart() {
+  var resultCart = document.getElementById("js-cart-count");
+  localStorage.setItem("products", JSON.stringify(products));
+  var cart = JSON.parse(localStorage.getItem("cart"));
+  var number = 0;
+  for (var i = 0; i < cart.length; i++) {
+    number += Number(cart[i]["count"]);
+  }
+  resultCart.innerHTML = number;
+}
+numberCart();
