@@ -48,16 +48,6 @@ var products = [{
 ];
 localStorage.setItem('products', JSON.stringify(products));
 
-// function countCart(){
-//   var countCart = document.getElementsByClassName('cart-products');
-//   var cart = JSON.parse(localStorage.getItem('cart'));
-//   var count = 0;
-//   for (var i = 0; i < cart.length; i++){
-//     console.log(cart[i].count);
-//     count += cart[i].count;
-//    }
-//   countCart.innerHTML = count;
-// }
 function numberCart() {
   var resultCart = document.getElementById("js-cart-count");
   localStorage.setItem("products", JSON.stringify(products));
