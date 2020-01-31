@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+</head>
+<body>
+  <div id="cart-products"></div>
+  <script>
+    function getItem(item, index) {
+      var render = document.getElementById("cart-products");
+      //style div parent
+      var div1 = document.createElement('div');
+      div1.setAttribute('class', 'content');
+      //style img
+      var img = document.createElement('img');
+      img.setAttribute('src', item.img)
+      //style div-content
+      var div2 = document.createElement('div');
+      div2.setAttribute('class', 'content_item');
+      var h3 = document.createElement('h3');
+      h3.innerHTML = item.name;
+      var p = document.createElement('p');
+      p.innerHTML = item.description;
+      //button
+      var button = document.createElement('button');
+      button.setAttribute('class', 'js-button-addtocart btn-addtocart');
+      button.innerHTML = 'Add to Cart';
+      button.onclick = function () { addCart(item); }
+    
+      //structure content
+      div2.appendChild(h3);
+      div2.appendChild(p);
+      div1.appendChild(img);
+      div1.appendChild(div2);
+      div1.appendChild(button);
+      render.appendChild(div1);
+    }
+    // getItem();
+    </script>
+</body>
+</html>

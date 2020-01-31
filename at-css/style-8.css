@@ -8,10 +8,6 @@ ul {
   margin: 0;
   padding: 0;
 }
-/* p {
-  margin: 0;
-} */
-
 img.logo {
     width: 70px;
     height: 70px;
@@ -51,6 +47,7 @@ img.phone {
 }
 .company-name-top {
     font-family: UTM-AvoBold;
+    font-size: 20px;
 }
 .company-name-bot {
     font-family: UTM-Avo;
@@ -135,7 +132,7 @@ a { text-decoration: none;
 .font-face-li{
     font-family: UTM-Avo;
     margin-bottom: 14px;
-    font-size: 11px;
+    font-size: 12px;
     color: #0d1d25;
     list-style: inside;
     margin-left: 20px;
@@ -271,16 +268,11 @@ input::placeholder{
     width: 126px;
     height: 46px;
     color: white;
-    /* margin-top: 10px; */
     background-color: #4bbc56;
-    /* margin-left: 75px; */
-    font-family: UTM-Avo;
+    font-family: UTM-AvoBold;
     font-size: 14px;
-    font-weight: bold;
     border: none;
-    /* margin: 0 auto; */
     justify-items: center;
-    /* margin-left: 10px; */
     margin: 0px 85px;
     margin-bottom: 15px;
 }
@@ -294,9 +286,10 @@ input::placeholder{
     display: flex;
     flex-wrap: wrap;
     width: 31%;
+    height: 323px;
     margin-left: 20px;
-    margin-bottom: 23px;
-    border: 1px solid rgb(255, 242, 235);
+    margin-bottom: 22px;
+    border: 1px solid #ebebeb;;
     position: relative;
 }
 img.img-new{
@@ -306,15 +299,18 @@ img.img-new{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
+    color: #282828;
     text-transform: uppercase;
     margin-left: 24px;
-    margin-bottom: 5px  
+    margin-bottom: 5px;
+    padding-top: 10px;
 }
 .new-content {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     margin-left: 24px;
     margin-right: 40px;
+    color: #282828;
 }
 .new-content::after{
     content: url(img/right.jpg);
@@ -367,10 +363,11 @@ img.img-new{
     text-transform: uppercase;
     /* justify-content: space-between; */
 }
+
 .footer-icon {
-    width: 18px;
-    height: 18px;
-    margin-top: 8px;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
 }
 .footer-bot{
     border-top: 1px solid #81d1f9;
