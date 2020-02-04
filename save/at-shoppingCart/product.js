@@ -46,28 +46,92 @@ function render(products) {
 render(products);
 clickCart();
 
-function clickCart(){
+// function clickCart(){
+//   var btnClick = document.getElementsByClassName('btn-click');
+//   var count = 1;
+//   var cart = JSON.parse(localStorage.getItem('cart'));
+//   for (var i = 0; i < btnClick.length; i++) {
+
+//     var indexBtn = btnClick[i];
+//     indexBtn.addEventListener('click', function (event) {
+//       var row = event.target.dataset.id;
+//       if (cart) //neu trong cart co roi thi xu li
+//       //nghia la rang
+//        {
+//         for (var i = 0; i < cart.length; i++) {
+//           if (row === cart[i]['id']) {
+//             cart[i]['count']++;
+//             break;
+//           }
+//           else if (i === (cart.length - 1)) {
+//             cart.push({ id: row, count: count });
+//             break;
+//           }
+//         }
+//       } else //trong cart rong thi cung gan vo mang 
+//        {
+//         cart = [];
+//         cart.push({ id: row, count: count });
+//       }
+//       localStorage.setItem('cart', JSON.stringify(cart));
+//       numberCart();
+//     });
+//   }
+// }
+
+// function clickCart() {
+//   var btnClick = document.getElementsByClassName('btn-click');
+//   var count = 1;
+//   var cart = JSON.parse(localStorage.getItem('cart'));
+//   for ( var i = 0 ; i < btnClick.length; i++) {
+//     var indexBtn = btnClick[i];
+//     indexBtn.addEventListener('click', function(event){
+//       var row = event.target.dataset.id;
+//       if (cart) {
+//         for ( var i = 0; i < cart.length; i++) {
+//           if ( row === cart[i]['id']) {
+//             cart[i]['count']++;
+//             break;
+//           }
+//           else if (i === (cart.length - 1)) {
+//             cart.push ({id: row, count: count})
+//           }
+//         }
+//       }
+//       else {
+//         cart = [];
+//         cart.push({id: row, count: count})
+//       }
+//       localStorage.setItem('cart', JSON.stringify(cart))
+//       numberCart();
+//     });
+//   }
+// }
+
+
+function clickCart() {
   var btnClick = document.getElementsByClassName('btn-click');
   var count = 1;
   var cart = JSON.parse(localStorage.getItem('cart'));
   for (var i = 0; i < btnClick.length; i++) {
     var indexBtn = btnClick[i];
-    indexBtn.addEventListener('click', function (event) {
+    indexBtn.addEventListener('click', function(event){
       var row = event.target.dataset.id;
       if (cart) {
-        for (var i = 0; i < cart.length; i++) {
-          if (row === cart[i]['id']) {
+        for (var i = 0; i <cart.length; i++) {
+          if (row === cart[i].id) {
             cart[i]['count']++;
             break;
           }
           else if (i === (cart.length - 1)) {
-            cart.push({ id: row, count: count });
+            cart.push({id: row, count: count});
             break;
           }
         }
-      } else {
+      }
+      else {
         cart = [];
-        cart.push({ id: row, count: count });
+        cart.push({id: row, count: count});
       }
       localStorage.setItem('cart', JSON.stringify(cart));
       numberCart();

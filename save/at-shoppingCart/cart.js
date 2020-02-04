@@ -10,7 +10,6 @@ function addToTable() {
     for (var j = 0; j < product.length; j++) {
       if (cart[i].id === product[j].id) {
         var tr = document.createElement("tr");
-
         var th1 = document.createElement("td");
         th1.scope = "row";
         th1.textContent = i + 1;
