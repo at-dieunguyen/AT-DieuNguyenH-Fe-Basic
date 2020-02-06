@@ -32,7 +32,8 @@ function render() {
     div3.appendChild(div4);
     //name
     var name = document.createElement('p');
-    name.innerHTML = 'Dieu: ';
+    name.innerHTML = 'Dieu Nguyen H: ';
+    name.classList = 'p-name';
     div4.appendChild(name);
     //comment
     var cmt = document.createElement('p');

@@ -7,6 +7,11 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+.container-2 {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
 .page-header {
   border-bottom: 2px solid black;
 }
@@ -18,10 +23,12 @@
 .nav-ul {
   display: flex;
   justify-content: flex-end;
+  padding-top: 10px;
 }
 .nav-a {
   text-decoration: none;
   font-size: 25px;
+  color: rgb(253, 55, 55);
 }
 .nav-li {
   list-style: none;
@@ -29,19 +36,21 @@
   text-transform: uppercase;
 }
 .main-title {
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   height: 100px;
 }
 .title-text {
   font-size: 25px;
   padding-top: 30px;
   text-align: center;
+  color: rgb(253, 55, 55);
 }
 .main-content {
-  height: 150px;
+  /* height: 150px; */
 }
 .main-link {
   text-align: center;
+  margin-top: 10px;
 }
 .page-footer {
   border-top: 2px solid black;
@@ -56,9 +65,11 @@
   height: 100px;
 }
 .btn-input {
-  width: 40px;
-  height: 40px;
-  margin: 10px;
+  width: 65px;
+  height: 30px;
+  margin: 14px;
+  margin-right: 22px;
+  color: rgb(253, 55, 55);
 }
 .img-avatar {
   width: 45px;
@@ -79,8 +90,8 @@
   width: 80%;
 }
 #comment-input {
-  width: 850px;
-  height: 50px;
+  width: 830px;
+  height: 52px;
   margin-top: 5px;
   border-radius: 5px;
 }
@@ -109,4 +120,24 @@
 }
 .main-comment {
   margin-bottom: 50px;
+}
+.p-name {
+  font-weight: bold;
+  color: rgb(253, 55, 55);
+}
+.link-text {
+  font-weight: bold;
+  color: rgb(253, 55, 55);
+  text-transform: uppercase;
+}
+.comment-text {
+  font-weight: bold;
+  color: rgb(253, 55, 55);
+  font-size: 25px;
+}
+.article-img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
