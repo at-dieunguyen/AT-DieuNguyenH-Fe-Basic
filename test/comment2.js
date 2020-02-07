@@ -13,11 +13,11 @@ function addComment() {
     getComment();
     var inputComment = document.getElementById('comment-input').value;
     if (inputComment === '') {
-      alert('Ban phai nhap comment');
+      alert('Không được để trống comment');
     }
     else {
       var object = {
-        id: 1,
+        id: comment.length && comment ? comment.length : 0,
         text: inputComment,
         isDeleted: false,
         user: {
@@ -36,41 +36,11 @@ function addComment() {
 //function render comment
 function renderComment() {
   getComment();
-  var div1 = document.getElementById('commented');
-  div1.innerHTML = '';
-  for (var i = 0; i < comment.length; i++) {
-    var div2 = document.createElement('div');
-    div2.classList = 'div2';
-    div1.appendChild(div2);
-    //div3
-    var div3 = document.createElement('div');
-    div3.classList = 'div3';
-    div2.appendChild(div3);
-    //img
-    var img = document.createElement('img');
-    img.src = comment[i].user.avatar;
-    img.classList = 'img-avatar';
-    div3.appendChild(img);
-    //div4
-    var div4 = document.createElement('div');
-    div4.classList = 'div4';
-    div3.appendChild(div4);
-    //name
-    var name = document.createElement('p');
-    name.innerHTML = comment[i].user.name;
-    name.classList = 'p-name';
-    div4.appendChild(name);
-    //comment
-    var cmt = document.createElement('p');
-    cmt.innerHTML = comment[i].text;
-    div4.appendChild(cmt);
-    //button
-    var btn = document.createElement('button');
-    btn.setAttribute('data-id', i);
-    div2.appendChild(btn);
-    btn.innerHTML = 'remove';
-    btn.classList = 'btn-remove';
-  }
+  var div1 = document.getElementById('js-commented');
+  var content = comment.map(function(item) {
+      return '<div class = "div2"><img class="img-avatar" src="'+item.user.avatar+'"><div class="div3"><p class="p-name">'+item.user.name+'</p><p>  '+item.text+'</p></div><button class="btn-remove" data-id="'+item.id+'">remove</button></div>';
+  });
+  div1.innerHTML = content.join('');
   deleteComment();
 }
 //function button remove
@@ -79,10 +49,10 @@ function deleteComment() {
   var btnDel = document.getElementsByClassName('btn-remove');
   for (var i = 0; i < btnDel.length; i++) {
     btnDel[i].addEventListener('click', function (event) {
-      var id = event.target.dataset.id;
-      var test = confirm('Bạn chắc muốn xóa cmt ?');
+      var remove = event.target.dataset.id;
+      var test = confirm('Bạn chắc muốn xóa comment ?');
       if (test == true) {
-        comment.splice(id, 1);
+        comment.splice(remove, 1);
         setComment();
         renderComment();
       }
