@@ -1,18 +1,43 @@
+var comment;
+function getComment() {
+  comment = localStorage.getItem('comment')
+  comment = comment ? JSON.parse(comment) : [];
+}
+function setComment() {
+  localStorage.setItem('comment', JSON.stringify(comment));
+}
+//function add comment to local storage
 function addComment() {
   var btnAdd = document.getElementsByClassName('btn-input')[0];
-  btnAdd.addEventListener('click', function() {
-  var comment = localStorage.getItem('comment');
-  comment = comment ? JSON.parse(comment) : [];
-  comment.push(document.getElementById('comment-input').value);
-  localStorage.setItem('comment', JSON.stringify(comment));
-  render();
-})
+  btnAdd.addEventListener('click', function () {
+    getComment();
+    var inputComment = document.getElementById('comment-input').value;
+    if (inputComment === '') {
+      alert('Ban phai nhap comment');
+    }
+    else {
+      var object = {
+        id: 1,
+        text: inputComment,
+        isDeleted: false,
+        user: {
+          id: 1,
+          name: 'Dieu Nguyen H.',
+          avatar: 'img/dieu.jpg'
+        }
+      }
+      comment.push(object);
+      setComment();
+      renderComment();
+      document.getElementById('comment-input').value = '';
+    }
+  });
 }
-function render() {
-  var comment = JSON.parse(localStorage.getItem('comment'));
+//function render comment
+function renderComment() {
+  getComment();
   var div1 = document.getElementById('commented');
-  div1.innerHTML ='';
-  document.getElementById('comment-input').value = '';
+  div1.innerHTML = '';
   for (var i = 0; i < comment.length; i++) {
     var div2 = document.createElement('div');
     div2.classList = 'div2';
@@ -23,7 +48,7 @@ function render() {
     div2.appendChild(div3);
     //img
     var img = document.createElement('img');
-    img.src = 'img/dieu.jpg';
+    img.src = comment[i].user.avatar;
     img.classList = 'img-avatar';
     div3.appendChild(img);
     //div4
@@ -32,34 +57,39 @@ function render() {
     div3.appendChild(div4);
     //name
     var name = document.createElement('p');
-    name.innerHTML = 'Dieu Nguyen H: ';
+    name.innerHTML = comment[i].user.name;
     name.classList = 'p-name';
     div4.appendChild(name);
     //comment
     var cmt = document.createElement('p');
-    cmt.innerHTML = comment[i];
+    cmt.innerHTML = comment[i].text;
     div4.appendChild(cmt);
     //button
     var btn = document.createElement('button');
-    btn.setAttribute('data-id',i);
+    btn.setAttribute('data-id', i);
     div2.appendChild(btn);
     btn.innerHTML = 'remove';
     btn.classList = 'btn-remove';
   }
-  deleteCmt();
+  deleteComment();
 }
-function deleteCmt() {
-  var comment = localStorage.getItem('comment');
+//function button remove
+function deleteComment() {
+  getComment();
   var btnDel = document.getElementsByClassName('btn-remove');
-  comment = comment ? JSON.parse(comment) : [];
   for (var i = 0; i < btnDel.length; i++) {
     btnDel[i].addEventListener('click', function (event) {
-      var remove = event.target.dataset.id;
-      comment.splice(remove, 1);
-      localStorage.setItem('comment', JSON.stringify(comment));
-      render();
+      var id = event.target.dataset.id;
+      var test = confirm('Bạn chắc muốn xóa cmt ?');
+      if (test == true) {
+        comment.splice(id, 1);
+        setComment();
+        renderComment();
+      }
+      else {
+      }
     });
   }
 }
 addComment();
-render();
+renderComment();

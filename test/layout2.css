@@ -47,7 +47,7 @@
   text-align: center;
 }
 .page-footer {
-  border-top: 2px solid black;
+  border-top: 2px solid #000000;
   text-align: center;
   height: 50px;
 }
@@ -62,8 +62,10 @@
   width: 65px;
   height: 30px;
   margin: 14px;
-  color: rgb(253, 55, 55);
   cursor: pointer;
+  background-color: rgb(253, 55, 55);
+  color: #ffffff;
+  border: none;
 }
 .img-avatar {
   width: 45px;
@@ -108,11 +110,17 @@
   margin: 6px;
 }
 .btn-remove {
-  background-color: rgb(253, 55, 55);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   margin: 10px;
   width: 70px;
   cursor: pointer;
+  border: none;
+}
+.btn-remove:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
 }
 .main-comment {
   margin-bottom: 50px;
