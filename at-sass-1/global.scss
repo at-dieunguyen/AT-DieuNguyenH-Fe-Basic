@@ -195,10 +195,9 @@ img.banner {
 	font-size: 13px;
 	border: none;
 	padding-left: 15px;
-	&:last-child {
-		&::after {
-			content: "hihi";
-		}
+	&::placeholder {
+		font-size: 13px;
+		color: $color-primary;
 	}
 }
 .aside-form-text {
@@ -216,12 +215,6 @@ img.banner {
 		width: 85px;
 	}
 }
-input {
-	&::placeholder {
-		font-size: 13px;
-		color: $color-primary;
-	}
-}
 .aside-top, .aside-bot {
   display: flex;
   height: 50px;
@@ -229,7 +222,6 @@ input {
   background-color: #d9e4e9;
   padding: 0 20px;
   margin-bottom: 20px;
-
 }
 .aside-top::after {
   content: url(img/opplus.png);
@@ -340,12 +332,6 @@ img.img-new {
 	margin: 10px 5px;
 	text-transform: $font-uppercase;
 	font-size: 12px;
-}
-.footer-copyright {
-	.container {
-		font-size: 12px;
-		text-transform: $font-uppercase;
-	}
 }
 .footer-icon {
 	width: 25px;
