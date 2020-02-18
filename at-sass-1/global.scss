@@ -1,3 +1,4 @@
+@import 'reset.scss';
 @font-face {
 	font-family: 'UTM-Avo';
 	src: url(fonts/UTM\ Avo.ttf);
@@ -14,17 +15,6 @@ $font-secondary: UTM-Avo;
 $font-secondary-bold: UTM-AvoBold;
 $font-uppercase: uppercase;
 $color-primary: #0d1d25;
-
-body {
-	padding: 0px;
-  margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
 img.logo {
 	width: 70px;
 	height: 70px;
@@ -192,11 +182,9 @@ img.banner {
 	margin-bottom: 15px;
 	width: 240px;
 	height: 37px;
-	font-size: 13px;
 	border: none;
 	padding-left: 15px;
 	&::placeholder {
-		font-size: 13px;
 		color: $color-primary;
 	}
 }
@@ -289,7 +277,6 @@ img.img-new {
 	padding-top: 10px;
 }
 .new-content {
-	font-size: 13px;
 	margin-left: 24px;
 	margin-right: 40px;
 	color: #282828;
