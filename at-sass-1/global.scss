@@ -211,13 +211,17 @@ img.banner {
   padding: 0 20px;
   margin-bottom: 20px;
 }
-.aside-top::after {
+.aside-top {
+	&::after {
   content: url(img/opplus.png);
 	padding-top: 12px;
+	}
 }
-.aside-bot::after {
+.aside-bot {
+	&::after {
   content: url(img/plus.png);
 	padding-top: 12px;
+	}
 }
 .aside-top-p, .aside-bot-p {
 	font-family: $font-secondary;
@@ -306,7 +310,7 @@ img.img-new {
 	text-transform: $font-uppercase;
 	font-size: 18px;
 }
-.footer-list {
+.footer-list-content {
 	font-size: 12px;
 	margin: 12px 0;
 	text-transform: $font-uppercase;
@@ -315,7 +319,7 @@ img.img-new {
 .footer-social {
 	@include display();
 }
-.footer-social-p {
+.footer-social-content {
 	margin: 10px 5px;
 	text-transform: $font-uppercase;
 	font-size: 12px;
