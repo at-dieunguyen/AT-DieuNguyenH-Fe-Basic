@@ -23,12 +23,14 @@ ol, ul {
 	justify-content: space-between;
 }
 .input-tab-1 {
-	border: none;
-	width: 100%;
-	padding: 20px 0 5px 0;
+	width: 410px;
+	padding: 10px;
 	outline: none;
 	border-bottom: 2px solid #ccc;
 	font-size: 14px;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }
 .container {
 	max-width: 580px;
@@ -40,13 +42,13 @@ ol, ul {
 .page-register .container {
 	border: 1px solid #d6cbcb;
 	border-radius: 8px;
-	margin-top: 125px;
+	margin-top: 100px;
 	background-color: #ffffff;
 }
 .form {
 	width: 100%;
 	margin: 15px 25px;
-	height: 385px;
+	height: 450px;
 	position: relative;
 }
 .form-input {
@@ -64,13 +66,14 @@ ol, ul {
 	list-style: none;
 }
 .step:first-child{
+	color: #ffffff;
   background-color: #7379ec	;
 }
 .step::after {
 	content: '';
 	position: absolute;
 	height: 2px;
-	width: 48px;
+	width: 49px;
 	background: #ccc;
 	top: 33px;
 	margin-left: 10px;
@@ -80,6 +83,7 @@ ol, ul {
 	width: 0;
 }
 .active {
+	color: #ffffff;
   background-color: #7379ec;
 }
 .active::before {
@@ -97,7 +101,7 @@ ol, ul {
 }
 .form-button {
 	position: absolute;
-	right: 40px;
+	right: 50px;
 	bottom: -5px;
 }
 .btn-next:enabled {
@@ -110,6 +114,7 @@ ol, ul {
 	background-color: #435cf7;
 	border-radius: 3px;
 	border: none;
+	outline: none;
 }
 .btn-next:disabled{
 	line-height: 40px;
@@ -135,6 +140,7 @@ ol, ul {
 	background-color: #c5c5c5;
 	border-radius: 3px;
 	border: none;
+	outline: none;
 }
 .input-phone-number {
 	display: flex;
@@ -156,18 +162,24 @@ ol, ul {
 }
 .form-success {
 	text-align: center;
-	margin: 10px;
+	margin: 25px 10px;
 }
 .phone-number {
 	margin: 20px;
 	padding: 8px;
 	padding-left: 40px;
 	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	outline: none;
 }
 .input-code {
 	padding: 7px;
 	padding-left: 25px;
 	width: 25px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	outline: none;
 }
 .img-ticky {
 	width: 20%;
@@ -177,4 +189,11 @@ ol, ul {
 	text-align: center;
 	color: #ff0000;
 	font-size: 13px;
+}
+.phone-span {
+	margin-top: 25px;
+}
+.info-text {
+	font-weight: bold;
+	margin: 15px 10px;
 }

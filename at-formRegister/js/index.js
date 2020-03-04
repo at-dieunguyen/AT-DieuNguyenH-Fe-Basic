@@ -92,11 +92,13 @@ btnNext.addEventListener("click", function(e) {
     return !validate;
   }
   nextTab();
+  if (currentTab === 0) {
+    document.getElementsByClassName("phone-number")[0].value = "";
+  }
   if (currentTab === 1) {
     errorInfo.innerHTML = "";
     btnNext.disabled = true;
     checkPhone();
-    btnNext.disabled = false;
   }
   if (currentTab === 2) {
     clearValueCode();
@@ -179,8 +181,8 @@ function focusNextInput(field, nextFieldID) {
 }
 //function clear value in input codenumber when back step4 to step2
 function clearValueCode() {
-  var clearCode = document.getElementsByClassName('input-code');
+  var clearCode = document.getElementsByClassName("input-code");
   for (var i = 0; i < clearCode.length; i++) {
-    clearCode[i].value = '';
+    clearCode[i].value = "";
   }
 }
