@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-register">
+    <div class="container">
+      <div class="form">
+        <h1 class="form-title">Register Form</h1>
+        <ul class="form-step">
+          <li class="step">1</li>
+          <li class="step">2</li>
+          <li class="step">3</li>
+          <li class="step">4</li>
+          <li class="step">5</li>
+        </ul>
+        <p class="error-message"></p>
+        <form class="form-register">
+          <div class="form-input">
+            <input class="input-tab-1" type="text" id="firstName" placeholder="First name">
+            <input class="input-tab-1" type="text" id="lastName" placeholder="Last name">
+            <input class="input-tab-1" type="email" id="email" placeholder="Email">
+            <input class="input-tab-1" type="password" id="password" placeholder="Password">
+            <input class="input-tab-1" type="password" id="confirmPassword" placeholder="Confirm Password">
+          </div>
+          <div class="form-input">
+            <h3>Your phone number</h3>
+            <div class="input-phone-number">
+              <input id="js-phone1" class="phone-number" type="text" placeholder="XXXX" maxlength="4"
+                onkeyup="focusNextInput(this, 'js-phone2')"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+              <input id="js-phone2" class="phone-number" type="text" placeholder="XXX" maxlength="3"
+                onkeyup="focusNextInput(this, 'js-phone3')"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+              <input id="js-phone3" class="phone-number" type="text" placeholder="XXX" maxlength="3"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+            </div>
+          </div>
+          <div class="form-input">
+            <h3>Your Code number:</h3>
+            <div class="code-number">
+              <input id="js-code1" class="input-code" type="text" name="" pattern="[0-9]{1}" maxlength="1"
+                onkeyup="focusNextInput(this, 'js-code2')" placeholder="X"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+              <input id="js-code2" class="input-code" type="text" name="" pattern="[0-9]{1}" maxlength="1"
+                onkeyup="focusNextInput(this, 'js-code3')" placeholder="X"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+              <input id="js-code3" class="input-code" type="text" name="" pattern="[0-9]{1}" maxlength="1"
+                onkeyup="focusNextInput(this, 'js-code4')" placeholder="X"
+                onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+              <input id="js-code4" class="input-code" type="text" name="" pattern="[0-9]{1}" maxlength="1"
+                placeholder="X" onkeypress="return event.charCode >= 8 && event.charCode <= 57">
+            </div>
+          </div>
+          <div class="form-input">
+            <h3 class="info-title">Your infomation</h3>
+            <p>Full name:</p>
+            <p class="info-user-name"></p>
+            <p>Email:</p>
+            <p class="info-user-email"></p>
+            <p>Phone number:</p>
+            <p class="info-user-phone"></p>
+          </div>
+          <div class="form-input">
+            <p class="form-success">Thanks for your registration!</p>
+            <img class="img-ticky" src="img/tick.png" alt="">
+            <p class="form-success">Your account has been created.</p>
+          </div>
+          <div class="form-button">
+            <button type="button" id="js-btnPrev" class="btn-prev">Previous</button>
+            <button type="button" id="js-btnNext" class="btn-next" onkeypress="even.charCode == 13">Next</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <button onclick="checkPhone();">click</button> -->
+  <script src="js/index.js"></script>
+</body>
+
+</html>
