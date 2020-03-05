@@ -38,6 +38,7 @@ ol, ul {
 	margin: 0 auto;
 	display: flex;
 	height: 100%;
+	overflow: hidden;
 }
 .page-register .container {
 	border: 1px solid #d6cbcb;
@@ -54,6 +55,11 @@ ol, ul {
 .form-input {
 	display: none;
 	margin: 0 40px;
+	animation: tab 0.8s ease;
+}
+@keyframes tab {
+	from {margin-left: -100%;}
+	to {margin-left: 10%;}
 }
 .step {
 	border-radius: 50%;
@@ -65,23 +71,6 @@ ol, ul {
 	border: 1px solid #b1aaaa;
 	list-style: none;
 }
-.step:first-child{
-	color: #ffffff;
-  background-color: #7379ec	;
-}
-.step::after {
-	content: '';
-	position: absolute;
-	height: 2px;
-	width: 49px;
-	background: #ccc;
-	top: 33px;
-	margin-left: 10px;
-}
-.step:last-child::after {
-	content: '';
-	width: 0;
-}
 .active {
 	color: #ffffff;
   background-color: #7379ec;
@@ -89,11 +78,15 @@ ol, ul {
 .active::before {
 	content: '';
 	position: absolute;
-	height: 3px;
-	width: 48px;
-	background: #7a80f5;
+	height: 2px;
+	width: 58px;
+	background: #7379ec;
 	top: 33px;
-	margin-left: -58px;
+	margin-left: -67px;
+}
+.active:first-child::before {
+	content: '';
+	width: 0px;
 }
 .form-title {
 	text-align: center;
@@ -193,7 +186,9 @@ ol, ul {
 .phone-span {
 	margin-top: 25px;
 }
-.info-text {
-	font-weight: bold;
-	margin: 15px 10px;
+.display-none {
+	display: none;
+}
+.display-block {
+	display: block;
 }

@@ -10,49 +10,35 @@ var email = document.getElementById("email");
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirmPassword");
 var currentTab = 0;
-var currentStep = 1;
 var arrCodeNumber = [];
 //create function to show tab and button
 function showTab(currentTab) {
-  var input = document.getElementsByClassName("form-input");
   if (currentTab == 0) {
-    document.getElementById("js-btnPrev").style.display = "none";
+    btnPrev.classList.add('display-none');
   } else {
-    document.getElementById("js-btnPrev").style.display = "inline";
+    btnPrev.classList.remove('display-none');
   }
-  input[currentTab].style.display = "block";
+  input[currentTab].classList.add('display-block');
 }
 showTab(currentTab);
 //add event button next tab
 function nextTab() {
-  input[currentTab].style.display = "none";
+  input[currentTab].classList.remove('display-block');
   currentTab = currentTab + 1;
+  step[currentTab].classList.add('active');
   showTab(currentTab);
-  //add event step
-  step[currentStep].classList.add("active");
-  currentStep++;
+  console.log(currentTab);
 }
 //add event button prev tab
 function prevTab() {
   btnPrev.addEventListener("click", function() {
-    if (currentTab === 3) {
-      input[currentTab].style.display = "none";
-      currentTab = currentTab - 1;
-      showTab(currentTab);
-      currentStep = currentStep - 1;
-      step[currentStep].classList.remove("active");
-    }
-    input[currentTab].style.display = "none";
+    input[currentTab].classList.remove('display-block');
+    step[currentTab].classList.remove('active');
     currentTab = currentTab - 1;
     showTab(currentTab);
-    //add event step
-    currentStep--;
-    step[currentStep].classList.remove("active");
+    // console.log(currentTab);
     if (currentTab === 0) {
       btnNext.disabled = false;
-    }
-    if (currentTab === 2) {
-      btnNext.disabled = true;
     }
     if (currentTab === 1) {
       btnNext.disabled = false;
@@ -93,7 +79,7 @@ btnNext.addEventListener("click", function(e) {
   }
   nextTab();
   if (currentTab === 0) {
-    document.getElementsByClassName("phone-number")[0].value = "";
+    document.getElementsByClassName('phone-number')[0].value = '';
   }
   if (currentTab === 1) {
     errorInfo.innerHTML = "";
@@ -156,7 +142,8 @@ function checkCodeNumber() {
         number4 === arrCodeNumber[3]
       ) {
         btnNext.disabled = false;
-      } else {
+      } 
+      else {
         btnNext.disabled = true;
       }
     });
@@ -181,8 +168,8 @@ function focusNextInput(field, nextFieldID) {
 }
 //function clear value in input codenumber when back step4 to step2
 function clearValueCode() {
-  var clearCode = document.getElementsByClassName("input-code");
+  var clearCode = document.getElementsByClassName('input-code');
   for (var i = 0; i < clearCode.length; i++) {
-    clearCode[i].value = "";
+    clearCode[i].value = '';
   }
 }
