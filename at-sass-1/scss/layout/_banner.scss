@@ -1,0 +1,30 @@
+.flex-banner {
+	background-image: url(/img/banner.jpg);
+	position: relative;
+}
+.breadcrumb {
+  @include display;
+  font-family: $font-secondary;
+	font-size: 12px;
+	color: $color-primary;
+	position: absolute;
+	top: 40%;
+}
+.breadcrumb-item {
+	&:first-child {
+		&::before {
+			content: "";
+			padding: 0;
+		}
+	}
+	&::before {
+		content: "/";
+		padding: 0 10px;
+	}
+}
+.breadcrumb-item-text {
+  text-decoration: none;
+	color: $color-primary;
+	font-family: $font-secondary;
+	font-size: 12px;
+}
