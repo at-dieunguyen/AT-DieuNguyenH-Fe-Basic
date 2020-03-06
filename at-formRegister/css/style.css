@@ -1,0 +1,194 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  padding: 0;
+  border: 0;
+	font-family: Lato-Regular;
+}
+@font-face{
+	font-family: 'Lato-Regular';
+	src: url(font/Lato-Regular.ttf);
+}
+body {
+	background-image: url(https://ptthsv.com/wp-content/uploads/2019/05/Savin-NY-Website-Background-Web.jpg);
+	background-size: cover;
+}
+ol, ul {
+  list-style: none;
+}
+.form-step {
+	display: flex;
+	margin: 0 75px;
+	padding: 0;
+	position: relative;
+	justify-content: space-between;
+}
+.input-tab-1 {
+	width: 410px;
+	padding: 10px;
+	outline: none;
+	border-bottom: 2px solid #ccc;
+	font-size: 14px;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+.container {
+	max-width: 580px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	height: 100%;
+	overflow: hidden;
+}
+.page-register .container {
+	border: 1px solid #d6cbcb;
+	border-radius: 8px;
+	margin-top: 100px;
+	background-color: #ffffff;
+}
+.form {
+	width: 100%;
+	margin: 15px 25px;
+	height: 450px;
+	position: relative;
+}
+.form-input {
+	display: none;
+	margin: 0 40px;
+	animation: tab 0.8s ease;
+}
+@keyframes tab {
+	from {margin-left: -100%;}
+	to {margin-left: 10%;}
+}
+.step {
+	border-radius: 50%;
+	width: 18px;
+	margin: 20px;
+	text-align: center;
+	padding: 5px;
+	color: #000000;
+	border: 1px solid #b1aaaa;
+	list-style: none;
+}
+.active {
+	color: #ffffff;
+  background-color: #7379ec;
+}
+.active::before {
+	content: '';
+	position: absolute;
+	height: 2px;
+	width: 58px;
+	background: #7379ec;
+	top: 33px;
+	margin-left: -67px;
+}
+.active:first-child::before {
+	content: '';
+	width: 0px;
+}
+.form-title {
+	text-align: center;
+	color: #5f5f73;
+}
+.form-button {
+	position: absolute;
+	right: 50px;
+	bottom: -5px;
+}
+.btn-next:enabled {
+	line-height: 40px;
+	padding: 0 25px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #435cf7;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+}
+.btn-next:disabled{
+	line-height: 40px;
+	padding: 0 25px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #ccc;
+	border-radius: 3px;
+	border: none;
+}
+.btn-next:enabled:hover {
+	background-color: #5168fb;
+}
+.btn-prev {
+	line-height: 40px;
+	padding: 0 25px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #c5c5c5;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+}
+.input-phone-number {
+	display: flex;
+}
+.code-number {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 50px;
+}
+.input-code {
+	margin: 5px;
+	padding-left: 35px;
+}
+.info-user-name, .info-user-email, .info-user-phone {
+	margin: 5px 50px;
+}
+.info-title {
+	text-align: center;
+}
+.form-success {
+	text-align: center;
+	margin: 25px 10px;
+}
+.phone-number {
+	margin: 20px;
+	padding: 8px;
+	padding-left: 40px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	outline: none;
+}
+.input-code {
+	padding: 7px;
+	padding-left: 25px;
+	width: 25px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	outline: none;
+}
+.img-ticky {
+	width: 20%;
+	margin: 0px 180px;
+}
+.error-message {
+	text-align: center;
+	color: #ff0000;
+	font-size: 13px;
+}
+.phone-span {
+	margin-top: 25px;
+}
+.display-none {
+	display: none;
+}
+.display-block {
+	display: block;
+}
