@@ -183,17 +183,18 @@ a {
   margin-bottom: 15px; }
 
 .aside-title-text {
+  font-family: "UTM-Avo";
   text-transform: uppercase;
   color: #0d1d25;
   background: #d9e4e9; }
 
 .aside-opplus {
   padding: 0 10px;
-  padding-top: 18px; }
+  padding-top: 20px; }
 
 .aside-plus {
   padding: 0 10px;
-  padding-top: 14px; }
+  padding-top: 17px; }
 
 .aside-top::after {
   content: url(/img/plus.png);
@@ -260,7 +261,7 @@ a {
   border: 1px solid #ebebeb;
   position: relative; }
 
-img.img-new {
+.img-new {
   width: 100%; }
 
 .new-title {
@@ -291,7 +292,7 @@ img.img-new {
 .image-banner {
   width: 100%; }
 
-img.image-arrow {
+.image-arrow {
   position: absolute;
   right: 0;
   bottom: 0; }

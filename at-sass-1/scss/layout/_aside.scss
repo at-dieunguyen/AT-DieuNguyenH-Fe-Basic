@@ -31,17 +31,18 @@
 	margin-bottom: 15px;
 }
 .aside-title-text {
+	font-family: $font-secondary;
 	text-transform: uppercase;
 	color: #0d1d25;
 	background: #d9e4e9;
 }
 .aside-opplus {
 	padding: 0 10px;
-	padding-top: 18px;
+	padding-top: 20px;
 }
 .aside-plus {
 	padding: 0 10px;
-	padding-top: 14px;
+	padding-top: 17px;
 }
 .aside-top {
 	&::after {
